@@ -1,0 +1,66 @@
+﻿    <html>
+    <body id="body">
+	<input 	type="text" id="type" value="" />
+	
+	<button onclick="addorder()">ADD</button>
+	
+	<table id="table1">
+	  <tbody id="tb1">
+	   <tr id="dd">
+	     <td>
+		<span id="type">2 dosa</span> - <span onclick="myfunction(this)" id="close">x</span>
+	     </td>
+	   </tr>
+	   <tr id="dd">
+	     <td>
+		<span id="type">3 idly</span> - <span onclick="myfunction(this)"  id="close">x</span>
+	     </td>
+	   </tr>
+	  </tbody>
+	</table>
+
+	<p id="demo"></p>
+
+	<script>
+		function addorder()
+			{
+			
+			 let tr=document.createElement("tr");
+
+			 
+				
+		         document.getElementById("table1").appendChild(tr);			
+ 
+ 			 let td=document.createElement("td");
+ 
+ 			 let para=document.createElement("span");
+
+			 para.innerHTML=document.getElementById("type").value;
+
+			 let para1=document.createElement("span");
+
+			 para1.innerHTML=" x";
+
+		         para1.setAttribute("onclick","myfunction(this)");
+
+			 
+ 			 let pt=tr.parentNode;
+			
+ 			 tr.appendChild(td);
+ 
+       			 td.appendChild(para);
+			 
+			 td.appendChild(para1);
+
+		       	 pt.prepend(tr,tr);
+			
+		}
+		function myfunction(ele)
+			{
+			 //alert("jiubh" + ele); 
+			 ele.parentNode.parentNode.remove();	 
+		}
+
+	</script>
+    </body>
+    </html>
